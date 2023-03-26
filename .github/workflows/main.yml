@@ -16,7 +16,7 @@ jobs:
         python-version: 3.7
 
     - run: pip install  pyinstaller
-    - run: pyinstaller --onefile jinja2-cli/cli.py
+    - run: pyinstaller --onefile cli.py
     - run: mv ./dist/cli ./dist/jinja2-cli
     # Optionally verify that it works (provided that it does not need user interaction)
     - run: ./dist/jinja2-cli

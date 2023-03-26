@@ -17,7 +17,7 @@ jobs:
 
     - run: pip install jinja2-cli pyinstaller
     - run: pyinstaller --onefile jinja2cli/cli.py
-    - run: mv ./dist/cli ./dist/jinja2-cli
+    - run: mv ./dist/cli* ./dist/jinja2-cli
     # Optionally verify that it works (provided that it does not need user interaction)
     - run: ./dist/jinja2-cli --version
     - uses: actions/upload-artifact@v2

@@ -19,11 +19,11 @@ jobs:
     - run: pyinstaller --onefile jinja2cli/cli.py
     # Optionally verify that it works (provided that it does not need user interaction)
     - run: mv ./dist/cli ./dist/jinja2-cli-linux
-      if: runner.os == 'Linux'
+      if: matrix.os == 'ubuntu-latest'
     - run: mv ./dist/cli ./dist/jinja2-cli-macos
-      if: runner.os == 'Windows'
+      if: matrix.os == 'macos-latest'
     - run: mv ./dist/cli ./dist/jinja2-cli-windows
-      if: runner.os == 'Windows'
+      if: matrix.os == 'windows-latest'
     - run: ./dist/jinja2-cli* --version
     - uses: actions/upload-artifact@v2
       with:

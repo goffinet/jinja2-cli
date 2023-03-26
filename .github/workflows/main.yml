@@ -20,11 +20,10 @@ jobs:
     # Optionally verify that it works (provided that it does not need user interaction)
     - run: mv ./dist/cli ./dist/jinja2-cli-linux
       if: matrix.os == 'ubuntu-latest'
-    - name: Run UPX
-      uses: crazy-max/ghaction-upx@v2
+    - uses: crazy-max/ghaction-upx@v2
       with:
         version: latest
-       files: |
+        files: |
          ./dist/*
         args: -fq
       if: matrix.os == 'ubuntu-latest'
@@ -32,11 +31,10 @@ jobs:
       if: matrix.os == 'macos-latest'
     - run: mv ./dist/cli.exe ./dist/jinja2-cli-windows.exe
       if: matrix.os == 'windows-latest'
-    - name: Run UPX
-      uses: crazy-max/ghaction-upx@v2
+    - uses: crazy-max/ghaction-upx@v2
       with:
         version: latest
-       files: |
+        files: |
          ./dist/*
         args: -fq
       if: matrix.os == 'windows-latest'
